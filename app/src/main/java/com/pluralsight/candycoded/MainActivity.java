@@ -87,9 +87,16 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main, menu);
         return true;
     }
-    // ***
-    // TODO - Task 1 - Show Store Information Activity
-    // ***
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        intent infointent = new intent(this, InfoActivity.class);
+        startActivity(infointent);
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    
 
     private void addCandiesToDatabase(Candy[] candies) {
         SQLiteDatabase db = candyDbHelper.getWritableDatabase();
